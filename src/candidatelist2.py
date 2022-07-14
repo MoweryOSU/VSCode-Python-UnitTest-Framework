@@ -1,3 +1,29 @@
+
+class CandidateList2:
+    def __init__(self, size):
+        self.size = size
+        self.candidateList = []
+        for i in range(self.size):
+            self.candidateList.append(0xFFFF)
+
+    def getListSize(self):
+        return len(self.candidateList)
+
+    def getCandidateList(self):
+        return self.candidateList
+
+    def getCandidate(self, index):
+        return self.candidateList[index]
+
+
+
+
+
+
+
+
+
+
 invalidValue = 0xFFFF
 
 def initCandidateList():
@@ -10,9 +36,8 @@ def initCandidateList():
     validCount = 0
     worstIndex = 0
     bestIndex = 0
-    
-def getCandidateList():
-    return candidateList
+
+
 
 def GetNumOfValidCandidates():
     return validCount
@@ -32,7 +57,7 @@ def AddCandidate(newValue):
 
     if candidateList[worstIndex] > newValue:
         candidateList[worstIndex] = newValue
-        global validCount 
+        global validCount
         if validCount < len(candidateList):
             validCount = validCount + 1
 
@@ -46,6 +71,6 @@ def AddCandidate(newValue):
                 tempIndex -= 1
             else:
                 break
-        
+
         if worstIndex < (len(candidateList)-1):
             worstIndex += 1
